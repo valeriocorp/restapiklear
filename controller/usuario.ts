@@ -1,6 +1,7 @@
 import  express, {Request, Response}   from 'express';
 
 export const getUsuarios = (req: Request, res: Response) =>{
+    const params = req.query;
     res.json({
         msg: 'Get usuarios'
     });
