@@ -15,6 +15,12 @@ export const isRoleValid = async(role = '') =>{
         throw new Error(`El email ${email} ya esta registrado intenta iniciar session`)
     }
   }
+  export const loginExist = async(email = '') =>{
+    const existelogin = await User.findOne({email});
+    if (!existelogin) {
+        throw new Error(`Email o contraseña no son correctos`)
+    }
+  }
 
   export const phoneExist = async(phone = '') =>{
     const existePhone = await User.findOne({phone});
